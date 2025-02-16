@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase 8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <script>
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBNApHz09nkIKfjHgYiTCwB-EzmWvEuul8", 
+            authDomain: "list-c8f99.firebaseapp.com",
+            databaseURL: "https://list-c8f99-default-rtdb.firebaseio.com/", 
+            projectId: "list-c8f99", 
+            storageBucket: "list-c8f99.firebasestorage.app", 
+            messagingSenderId: "561609182690", 
+            appId: "1:561609182690:web:fd0d15a8577a3a20573dbb", 
+            measurementId: "G-NNNHXKXJN7" 
+        };
+
+        // Inisialisasi Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <h1>Order List Baken Meal</h1>
+    
+    <form id="addTodoForm">
+        <input type="text" id="todoName" placeholder="Costumer" required>
+        <select id="todoMenu" required>
+            <option value="Dadar Gulung">Dadar Gulung</option>
+            <option value="Pisang Palem">Pisang Palem</option>
+        </select>
+        <select id="todoOpsi" required>
+            <option value="Stand 14">Stand 14</option>
+            <option value="Diantar">Diantar</option>
+        </select>
+        <input type="text" id="todoNotes" placeholder="Note" required>
+        <button type="submit">Add</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+    
+    <table id="todoTable">
+      <thead>
+          <tr>
+              <th>No</th>
+              <th>Costumer</th>
+              <th>Menu</th>
+              <th>Status</th>
+              <th>Opsi</th>
+              <th>Note</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Data akan diisi lewat JavaScript -->
+      </tbody>
+    </table>
+
+    <script src="function.js"></script>
+</body>
+</html>
